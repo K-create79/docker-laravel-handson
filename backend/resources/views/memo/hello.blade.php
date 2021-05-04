@@ -7,6 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>メモ</h1>
+  <h1>メモ一覧</h1>
 </body>
 </html>
