@@ -15,4 +15,4 @@ use App\Http\Controllers\MemoController;
 
 
 Route::get('/', [MemoController::class,'showList']);
-
+Route::get('/createMemo', [MemoController::class,'createMemo']);

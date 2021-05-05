@@ -7,6 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>メモ一覧</h1>
+<h1>メモ作成</h1>
+  <form action="">
+    <textarea name="memo" id="" cols="100" rows="30"></textarea>
+    <input type="button" value="メモ作成">
+  </form>
+
+<a href="/">戻る</a>
 </body>
 </html>
