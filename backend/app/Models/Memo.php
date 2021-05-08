@@ -8,9 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Memo extends Model
 {
     use HasFactory;
-
-    protected $table = 'memos';
-    protected $fillable = [
-        'memo'
+    //テーブル明
+    protected $table = "memos";
+    
+    //可変項目
+    protected $fillable =
+    [
+        'title',
+        'memo',
+        'id',
+        'timestamps'
     ];
 }

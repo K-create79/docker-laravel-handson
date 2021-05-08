@@ -1,3 +1,4 @@
+<?php use App\Models\Memo;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,9 @@
 <a href="/createMemo">メモ作成</a>
 
 <h1>メモ一覧</h1>
+<?php 
+
+?>
 
 </body>
 </html>

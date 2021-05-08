@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Memo;
 
 class MemoController extends Controller
 {
@@ -20,5 +21,14 @@ class MemoController extends Controller
     */
     public function createMemo(){
         return view('memo.createMemo');
+    }
+
+    /*
+    メモ作成完了
+    return@view
+    */
+    public function createdMemo(){
+        
+        return view('memo.createdMemo');
     }
 }
