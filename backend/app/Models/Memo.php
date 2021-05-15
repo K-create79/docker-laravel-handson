@@ -16,7 +16,5 @@ class Memo extends Model
     [
         'title',
         'memo',
-        'id',
-        'timestamps'
     ];
 }
