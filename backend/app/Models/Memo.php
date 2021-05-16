@@ -17,4 +17,6 @@ class Memo extends Model
         'title',
         'memo',
     ];
+
+    protected $guarded = ['id'];
 }

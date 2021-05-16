@@ -31,4 +31,11 @@ class MemoController extends Controller
         
         return view('memo.createdMemo');
     }
+
+    public function test(){
+        $memo = Memo::create([
+            'title' => $title,
+            'memo' => $memo
+        ]);
+    }
 }

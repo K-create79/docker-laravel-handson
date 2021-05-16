@@ -9,9 +9,9 @@
 <body>
   <h1>メモ作成完了</h1>
   <h2>タイトル</h2><br>
-  <p><?php echo  $_POST["title"] ?? ''; ?></p><br>
+  <p><?php echo  $_POST["title"] ?? 'error'; ?></p><br>
   <h2>メモ内容</h2><br>
-  <p><?php echo  $_POST["memo"] ?? ''; ?></p><br>
+  <p><?php echo  $_POST["memo"] ?? 'error'; ?></p><br>
   <a href="/createMemo">メモを作成する</a><br>
   <a href="/">一覧に戻る</a>
 </body>
