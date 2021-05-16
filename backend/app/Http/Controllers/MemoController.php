@@ -36,6 +36,7 @@ class MemoController extends Controller
         $memo = Memo::create([
             'title' => $title,
             'memo' => $memo
+            
         ]);
     }
 }
