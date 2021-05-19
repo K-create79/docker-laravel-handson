@@ -12,6 +12,11 @@ class MemoController extends Controller
     return@view
     */
     public function showList(){
+        $memos = array();
+        for($i=1; $i<=4; $i++){
+            $memo = Memo::find($i);
+            $memos[] = $memo;
+        }
         return view('memo.showMemos');
     }
 
@@ -25,18 +30,21 @@ class MemoController extends Controller
 
     /*
     メモ作成完了
+    param request@title @memo
+    create memosTable @title @memo
     return@view
     */
-    public function createdMemo(){
-        
-        return view('memo.createdMemo');
-    }
 
-    public function test(){
-        $memo = Memo::create([
+    public function createdMemo(Request $request){
+
+        $title = $request->input('title');
+        $memo = $request->input('memo');
+
+        $createdMemo = Memo::create([
             'title' => $title,
-            'memo' => $memo
-            
+            'memo' => $memo           
         ]);
+
+        return view('memo.createdMemo');
     }
 }

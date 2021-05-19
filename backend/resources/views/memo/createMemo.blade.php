@@ -11,9 +11,9 @@
   <form method="POST" action="{{ url('/createdMemo') }}">
     {{ csrf_field() }}
     <h2>タイトル</h2><br>
-    <input type="text" name="title" value="">
+    <input type="text" name="title" value="{{$title ?? ''}}">
     <h2>メモ内容</h2><br>
-    <input type="text" name="memo" value="">
+    <input type="text" name="memo" value="{{$memo ?? ''}}">
     <button type="submit" name="createdMemo">メモ作成</button>
   </form>
 
