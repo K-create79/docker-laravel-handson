@@ -1,11 +1,28 @@
 body{
     background: rgba(245, 234, 187, 0.5);
+    padding-left: 10px;
+    width:cover;
 }
 
 th{
+    display: inline-block;
+    background: blanchedalmond;
+    font-family:'arial unicode ms';
     border: solid 0.1px;
+    width:500px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 td{
+    display: inline-block;
+    background: blanchedalmond;
+    font-family:'arial unicode ms';
+    font-size: 20px;
     border: solid 0.1px;
+    border-radius: 2%;
+    width: 500px;
+    height: 100px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }

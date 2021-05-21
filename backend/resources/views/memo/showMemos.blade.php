@@ -9,11 +9,15 @@
   <title>メモ一覧</title>
   <link href="css/memo.css" rel="stylesheet">
 </head>
+
 <body>
-<a href="/createMemo">メモ作成</a>
+
+<form action="{{url('/createMemo')}}" method="get">
+<button> メモ作成 </button>
+</form>
 
 <h1>メモ一覧</h1> 
-<table >
+<table>
   <tr>
     <th>タイトル</th>
     <th>メモ内容</th>
