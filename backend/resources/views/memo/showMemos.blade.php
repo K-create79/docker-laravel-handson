@@ -1,5 +1,5 @@
 <?php use App\Models\Memo;?>
-<?php use App\Http\Controllers\MemoController?>
+<?php use App\Http\Controllers\MemoController;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,14 +21,22 @@
   <tr>
     <th>タイトル</th>
     <th>メモ内容</th>
+    <th>削除リクエスト</th>
   </tr>
 <?php 
   $all = Memo::all();
   for($i=1; $i<=count($all); $i++ ){
    $memo = Memo::find($i);?>
    <tr>
-     <td><?php echo $memo->title;?></td>
-     <td><?php echo $memo->memo?></td>
+   <!--　一旦　createMemo.blade.php に直接.memo.title.のデータを送り、表示してみる-->
+     <!-- <form action="{{ url('/createMemo') }}" method="post"> -->
+     <form action="./createMemo" method="post">
+      @csrf
+      <!--一回ボタンを押すとtitleとmemoの両方がpostメソッドでurlに送信される方法を考える-->
+          <td> <button name="title" value="{{$memo->title}}">{{$memo -> title}} </button>　</td>
+          <td> <button name="memo" value="{{$memo->memo}}">{{$memo -> memo}} </button> </td>          
+      </form>
+          <td>  <button name="delete" action="{{url('/editMemo')}}"> 削除する </button> </td>
    </tr>
 <?php } ?>
 </table> 

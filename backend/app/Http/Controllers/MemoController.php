@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Memo;
 
@@ -24,7 +23,18 @@ class MemoController extends Controller
     メモ作成
     return@view
     */
-    public function createMemo(){
+    public function createMemo ( /* Request $request */){
+        //request::all()でデータを取れていない可能性高い
+       /* $postData = $request::first();
+        if($postData == $request->input('title')){
+            $title = $request->input('title');
+            $memo = Memo::where('title',$title)->first();
+            return view('memo.createMemo' , compact('memo'));
+        }else{
+            $memo = $request->input('memo');
+            $memo = Memo::where('memo',$memo)->first();
+            return view('memo.createMemo' , compact('memo')); 
+             }*/
         return view('memo.createMemo');
     }
 
@@ -47,4 +57,11 @@ class MemoController extends Controller
 
         return view('memo.createdMemo');
     }
+
+    public function deleteMemo(){
+
+        return view('memo.deleteMemo');
+    }
 }
+
+    
