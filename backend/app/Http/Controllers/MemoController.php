@@ -59,7 +59,6 @@ class MemoController extends Controller
     }
 
     public function deleteMemo(){
-
         return view('memo.deleteMemo');
     }
 }

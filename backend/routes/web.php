@@ -18,4 +18,4 @@ Route::get('/', [MemoController::class,'showList']);
 Route::post('/createMemo', [MemoController::class,'createMemo']) -> name('title','memo');
 Route::get('/createMemo', [MemoController::class,'createMemo']);
 Route::post('/createdMemo' , [MemoController::class,'createdMemo']) -> name('title','memo');
-Route::get('/deleteMemo', [MemoController::class,'deleteMemo']);
+Route::post('/deleteMemo', [MemoController::class,'deleteMemo']);

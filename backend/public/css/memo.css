@@ -1,0 +1,16 @@
+body{
+    background: rgb(241, 215, 185, 0.2);
+}
+
+th{
+    height: 100px;
+    width:200px;
+    border: solid 1px rgba(145, 129, 110, 0.2);
+}
+
+td{
+    height: 100px;
+    width:200px;
+    border: solid 0.5px rgba(170, 152, 131, 0.219);
+    padding-left: 30px;
+}

@@ -36,7 +36,10 @@
           <td> <button name="title" value="{{$memo->title}}">{{$memo -> title}} </button>　</td>
           <td> <button name="memo" value="{{$memo->memo}}">{{$memo -> memo}} </button> </td>          
       </form>
-          <td>  <button name="delete" action="{{url('/editMemo')}}"> 削除する </button> </td>
+      <form action="{{url('/deleteMemo')}}" method="post">
+      @csrf
+          <td>  <button name="delete"> 削除する </button> </td>
+      </form>
    </tr>
 <?php } ?>
 </table> 
