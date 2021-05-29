@@ -58,8 +58,12 @@ class MemoController extends Controller
         return view('memo.createdMemo');
     }
 
-    public function deleteMemo(){
-        return view('memo.deleteMemo');
+    public function deleteMemo($id){
+        $memo = Memo::find($id);
+        $body = $memo->memo;
+        $title = $memo->title;
+        $id = $memo->id;
+        return view('memo.deleteMemo',compact('id','body','title'));
     }
 }
 
