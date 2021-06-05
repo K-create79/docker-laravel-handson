@@ -11,11 +11,6 @@ class MemoController extends Controller
     return@view
     */
     public function showList(){
-        $memos = array();
-        for($i=1; $i<=4; $i++){
-            $memo = Memo::find($i);
-            $memos[] = $memo;
-        }
         return view('memo.showMemos');
     }
 
@@ -23,18 +18,7 @@ class MemoController extends Controller
     メモ作成
     return@view
     */
-    public function createMemo ( /* Request $request */){
-        //request::all()でデータを取れていない可能性高い
-       /* $postData = $request::first();
-        if($postData == $request->input('title')){
-            $title = $request->input('title');
-            $memo = Memo::where('title',$title)->first();
-            return view('memo.createMemo' , compact('memo'));
-        }else{
-            $memo = $request->input('memo');
-            $memo = Memo::where('memo',$memo)->first();
-            return view('memo.createMemo' , compact('memo')); 
-             }*/
+    public function createMemo (){
         return view('memo.createMemo');
     }
 
@@ -64,6 +48,15 @@ class MemoController extends Controller
         $title = $memo->title;
         $id = $memo->id;
         return view('memo.deleteMemo',compact('id','body','title'));
+    }
+
+    public function deletedMemo($id){
+        $meom = Memo::destroy($id);
+        return view('memo.deletedMemo');
+    }
+
+    public function main(){
+        return view('memo.main');
     }
 }
 

@@ -6,21 +6,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/memo.css">
+  <link href="{{asset('css/')}}/memo/memo.css" rel="stylesheet">  
   <title>メモ作成</title>
 </head>
 <body>
 <h1>メモ作成</h1>
 
-  <form method="POST" action="{{ url('/createdMemo') }}" enctype="multipart/form-data">
+  <form method="POST" action="/createdMemo" enctype="multipart/form-data">
     @csrf
    
     <?php if(isset($_POST['title']) ){
-            $title = $_POST['title'];
-            $memo = Memo::where('title', $title)->first();
+            $id = $_POST['title'];
+            $memo = Memo::find($id);
+            echo "<h2>"."メモを編集して下さい！"."</h2>" ;
           }elseif(isset($_POST['memo'])){
-            $memo = $_POST['memo'];
-            $memo = Memo::where('memo', $memo)->first();
+            $id = $_POST['memo'];
+            $memo = Memo::find($id);
+            echo "<h2>"."メモを編集して下さい！"."</h2>" ;
           }else{
             echo "<h2>"."メモを作成して下さい！"."</h2>" ;}
     ?> 

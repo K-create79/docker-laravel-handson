@@ -1,0 +1,23 @@
+body{
+    background: rgba(22, 22, 21, 0.2);
+}
+
+th{
+    height: 100px;
+    width:200px;
+    border: solid 1px rgba(49, 44, 38, 0.2);
+}
+
+td{
+    height: 100px;
+    width:200px;
+    border: solid 0.5px rgba(41, 37, 33, 0.219);
+    padding-left: 30px;
+}
+
+.test{
+    display: inline-block;
+    width: 200px;
+    height:100px;
+    padding-top: 70px;
+}
