@@ -51,12 +51,21 @@ class MemoController extends Controller
     }
 
     public function deletedMemo($id){
-        $meom = Memo::destroy($id);
+        Memo::destroy($id);
         return view('memo.deletedMemo');
     }
 
     public function main(){
         return view('memo.main');
+    }
+
+    public function editedMemo($id , Request $request){
+        $title = $request->input('title');
+        $body = $request->input('memo');      
+        Memo::find($id) -> update(['title' -> $title,
+                                    'memo' -> $body
+                                  ]);
+        return view('memo.editedMemo');
     }
 }
 

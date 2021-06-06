@@ -26,15 +26,11 @@
     <th>削除リクエスト</th>
   </tr>
 <?php 
-  $all = Memo::all();
-  for($i=count($all); $i>=1; $i-- ){
+  $maxId = Memo::max('id');
+  for($i=$maxId; $i>=1; $i-- ){
     if(null !== Memo::find($i)){
-      $memo = Memo::find($i);
-    }else{
-      continue;
-    }
-   ?>
-   <tr>
+      $memo = Memo::find($i); ?>
+      <tr>
    <!--　一旦　createMemo.blade.php に直接.memo.title.のデータを送り、表示してみる-->
      <!-- <form action="{{ url('/createMemo') }}" method="post"> -->
      <form action="/createMemo" method="post">
@@ -44,12 +40,13 @@
           <td> <button name="title" value="{{$memo->id}}" >{{$memo -> title}} </button>　</td>
           <td> <button name="memo" value="{{$memo->id}}">{{$memo -> memo}} </button> </td>
       </form>
-      <form action="/deleteMemo/{{$memo->id}}" method="post">
+      <form action="/deletedMemo/{{$memo->id}}" method="post">
       @csrf
           <td>  <button name="{{$memo->id}}" id="{{$memo->id}}"> 削除する </button> </td>
       </form>
    </tr>
-<?php } ?>
+    <?php }
+    }?>
           
       <td>
         <a href="/">
